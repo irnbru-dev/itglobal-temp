@@ -1,0 +1,29 @@
+extends ../pug/layout.pug
+
+block content
+    +main-screen()
+
+    div.services
+        div.container
+            //div.row
+            //    div.col-md-4
+            //        +card('', 'Cloud', '', '')
+            //    div.col-md-4
+            //        +card('', 'Managed', '', '')
+            //    div.col-md-4
+            //        +card('', 'Hardware', '', '')
+            //    div.col-md-4
+            //        +card('', 'Security', '', '')
+
+            div.row
+                - var n = 0;
+                while n < 4
+                    div.col-md-3
+                       +card('', 'Cloud', '', '')
+                    - n++
+
+    div.advantages
+        div.container
+            h2 Blablabla
+            div.row
+                div.col-md-3

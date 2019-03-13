@@ -1,0 +1,7 @@
+mixin list(attr, linkAttr, Items)
+    - var Items = Items;
+    ul(class= attr)
+        each link, url in Items
+            li(class= linkAttr)
+                a(href= url)= link
+    block

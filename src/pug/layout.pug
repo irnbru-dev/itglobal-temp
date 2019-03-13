@@ -1,0 +1,19 @@
+include _blocks-connect
+
+doctype html
+html(class='page', lang='ru')
+
+    block head
+        include inc/_head
+
+    body
+        main
+
+            +header()
+
+            block content
+
+            +footer()
+
+        block scripts
+            include inc/_scripts
