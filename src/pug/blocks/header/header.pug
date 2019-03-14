@@ -3,5 +3,8 @@ mixin header()
         div.container
             div.header__wrap
                 +logo()
-                +main-nav()
+                div.d-flex
+                    +main-nav()
+                    +search()
+                    +lang-switcher()
                 block

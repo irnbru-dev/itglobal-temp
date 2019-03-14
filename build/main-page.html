@@ -1,8 +1,5 @@
 <!-- Подключение атомарных блоков-->
 <!-- Подключение целых компонентов-->
-<!-- Takes args:-->
-<!-- string: nav class-->
-<!-- obj: nav-item-->
 <!DOCTYPE html>
 <html class="page" lang="ru">
   <head>
@@ -11,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ITGLOBAL</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
   </head>
   <body>
@@ -18,13 +17,17 @@
       <header class="header">
         <div class="container">
           <div class="header__wrap">
-            <div class="logo"><img alt="ITGLOBAL" /></div>
-            <div class="main-nav">
-              <ul class="main-nav">
-                <li class="nav-item"><a href="/about">Home</a></li>
-                <li class="nav-item"><a href="/solutions">Решения</a></li>
-                <li class="nav-item"><a href="/some">other</a></li>
-              </ul>
+            <div class="logo"><a href="/"><img alt="ITGLOBAL" /></a></div>
+            <div class="d-flex">
+              <nav>
+                <ul class="main-nav">
+                  <li class="nav-item"><a href="/about">Home</a></li>
+                  <li class="nav-item"><a href="/solutions">Решения</a></li>
+                  <li class="nav-item"><a href="/some">other</a></li>
+                </ul>
+              </nav>
+              <div class="search"><img /><span>search</span></div>
+              <div class="lang-switcher"><span>switcher</span></div>
             </div>
           </div>
         </div>
@@ -46,30 +49,30 @@
           <!--    div.col-md-4-->
           <!--        +card('', 'Security', '', '')-->
           <div class="row">
-            <div class="col-md-3">
-              <div class="card"><img src="" />
-                <h2>Cloud</h2>
-                <p></p><a href="">Learn more</a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card"><img src="" />
-                <h2>Cloud</h2>
-                <p></p><a href="">Learn more</a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card"><img src="" />
-                <h2>Cloud</h2>
-                <p></p><a href="">Learn more</a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card"><img src="" />
-                <h2>Cloud</h2>
-                <p></p><a href="">Learn more</a>
-              </div>
-            </div>
+            <div class="col-md-3"><a href="">
+                <div class="card"><img src="" />
+                  <h2>Cloud</h2>
+                  <p></p><a href="">Learn more</a>
+                </div>
+              </a></div>
+            <div class="col-md-3"><a href="">
+                <div class="card"><img src="" />
+                  <h2>Cloud</h2>
+                  <p></p><a href="">Learn more</a>
+                </div>
+              </a></div>
+            <div class="col-md-3"><a href="">
+                <div class="card"><img src="" />
+                  <h2>Cloud</h2>
+                  <p></p><a href="">Learn more</a>
+                </div>
+              </a></div>
+            <div class="col-md-3"><a href="">
+                <div class="card"><img src="" />
+                  <h2>Cloud</h2>
+                  <p></p><a href="">Learn more</a>
+                </div>
+              </a></div>
           </div>
         </div>
       </div>

@@ -1,8 +1,4 @@
-// Takes args:
-// string: nav class
-// obj: nav-item
-
-mixin main-nav()
-    div.main-nav
+mixin main-nav(attr)
+    nav(class= attr)
         +list('main-nav', 'nav-item', {'/about' : 'Home', '/solutions' : 'Решения', '/some' : 'other'})
-    block
+        block

@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     pug = require('gulp-pug'),
     prettify = require('gulp-prettify'),
     concat = require('gulp-concat'),
@@ -8,10 +8,12 @@ var gulp = require('gulp'),
     cssmin = require('gulp-cssnano'),
     uglify = require('gulp-uglify'),
     sass   = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    postcss   = require('gulp-postcss'),
+    imagemin = require('gulp-imagemin'),
+    autoprefixer = require('autoprefixer'),
     debug = require('gulp-debug');
 
-var path = {
+const path = {
     dest: {
         html: 'build/',
         css : 'build/css/',
@@ -20,7 +22,7 @@ var path = {
     src: {
         html: 'src/pages/**/*.pug',
         scss: 'src/scss/style.scss',
-        js  : 'src/js/*.js'
+        js  : 'src/js/**/*.js'
     },
     watch: {
         html: 'src/pug/**/*.pug',
@@ -42,10 +44,7 @@ gulp.task('pug', function() {
 gulp.task('sass', function () {
     return gulp.src(path.src.scss)
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
+        .pipe(postcss([ autoprefixer({browsers: ['last 20 versions, IE 9']}) ]))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.dest.css))
@@ -56,6 +55,12 @@ gulp.task('js', function () {
         .pipe(concat('script.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(path.dest.js))
+});
+
+gulp.task('image', function() {
+    gulp.src('src/img/**/*')
+    .pipe(imagemin({}))
+    .pipe(gulp.dest('build/img/'));
 });
 
 gulp.task('watch', function () {
